@@ -30,7 +30,6 @@ jobs:
 
       - name: Compiling
         run: chmod +x project/luajit/scripts/MinGW-Building.sh && ./project/luajit/scripts/MinGW-Building.sh
-        shell: msys2 {0}
 
       - name: Upload Artifact
         uses: actions/upload-artifact@main
