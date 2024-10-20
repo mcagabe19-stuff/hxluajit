@@ -85,9 +85,7 @@ jobs:
         run: sudo dpkg --add-architecture i386 && sudo apt-get update && sudo apt-get install make automake autoconf libtool build-essential gcc-multilib -y
 
       - name: Compiling
-        run: chmod +x project/luajit/scripts/Android-Building.sh && ./project/luajit/scripts/Android-Building.sh
-        env:
-          ANDROID_NDK_HOME: "$ANDROID_NDK_LATEST_HOME"
+        run: ANDROID_NDK_HOME="$ANDROID_NDK_LATEST_HOME" chmod +x project/luajit/scripts/Android-Building.sh && ./project/luajit/scripts/Android-Building.sh
 
       - name: Upload Artifact
         uses: actions/upload-artifact@main
