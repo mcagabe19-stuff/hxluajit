@@ -17,7 +17,7 @@ fi
 
 make clean
 cd src
-make -j$JOBS CC=clang BUILDMODE=static
+make -j$JOBS CC=x86_64-w64-mingw32-gcc BUILDMODE=static
 cd ..
 cp src/libluajit.a build/libluajit.a
 
