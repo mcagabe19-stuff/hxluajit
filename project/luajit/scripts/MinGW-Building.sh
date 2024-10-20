@@ -17,7 +17,7 @@ fi
 
 make clean
 cd src
-make -j$JOBS CC=x86_64-w64-mingw32-gcc BUILDMODE=static TARGET_SYS=Windows
+make -j$JOBS HOST_CC=gcc CROSS=x86_64-w64-mingw32- BUILDMODE=static TARGET_SYS=Windows
 cd ..
 cp src/libluajit.a build/libluajit.a
 
