@@ -25,7 +25,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@main
 
-      - name: Setup MSYS2
+      - name: Setup MinGW
         run: sudo apt update && sudo apt install mingw-w64 -y
 
       - name: Compiling
