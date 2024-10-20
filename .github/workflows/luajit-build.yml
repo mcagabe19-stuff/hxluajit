@@ -8,7 +8,7 @@ jobs:
         uses: actions/checkout@main
 
       - name: Setup MSVC
-        uses: ilammy/msvc-dev-cmd@v1
+        uses: ilammy/msvc-dev-cmd@master
 
       - name: Compiling
         run: ./project/luajit/scripts/Windows-Building.bat
@@ -26,7 +26,7 @@ jobs:
         uses: actions/checkout@main
 
       - name: Setup MSYS2
-        uses: msys2/setup-msys2@v2
+        uses: msys2/setup-msys2@main
         with:
           msystem: MINGW64
           cache: false
