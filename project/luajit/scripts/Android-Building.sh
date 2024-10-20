@@ -9,10 +9,10 @@ mkdir -p build
 NDKBIN="$ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64/bin"
 
 declare -A archs=(
-	["arm64"]="aarch64-linux-android- aarch64-linux-android21-clang -m64"
-	["armv7a"]="armv7a-linux-androideabi- armv7a-linux-androideabi21-clang -m32"
-	["x86_64"]="x86_64-linux-android- x86_64-linux-android21-clang -m64"
-	["x86"]="i686-linux-android- i686-linux-android21-clang -m32"
+	["arm64"]="aarch64-linux-android- aarch64-linux-android24-clang -m64"
+	["armv7a"]="armv7a-linux-androideabi- armv7a-linux-androideabi24-clang -m32"
+	["x86_64"]="x86_64-linux-android- x86_64-linux-android24-clang -m64"
+	["x86"]="i686-linux-android- i686-linux-android24-clang -m32"
 )
 
 if command -v nproc &> /dev/null; then
