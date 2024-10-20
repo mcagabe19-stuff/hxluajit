@@ -46,7 +46,7 @@ jobs:
           path: LuaJIT/build
           if-no-files-found: warn
   MacOS:
-    runs-on: macos-latest
+    runs-on: macos-15
     steps:
       - name: Checkout
         uses: actions/checkout@main
@@ -61,7 +61,7 @@ jobs:
           path: LuaJIT/build
           if-no-files-found: warn
   iOS:
-    runs-on: macos-latest
+    runs-on: macos-15
     steps:
       - name: Checkout
         uses: actions/checkout@main
@@ -86,6 +86,8 @@ jobs:
 
       - name: Compiling
         run: chmod +x project/luajit/scripts/Android-Building.sh && ./project/luajit/scripts/Android-Building.sh
+        env:
+          ANDROID_NDK_HOME: $ANDROID_NDK_LATEST_HOME
 
       - name: Upload Artifact
         uses: actions/upload-artifact@main
