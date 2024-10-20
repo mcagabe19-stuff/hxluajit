@@ -20,20 +20,13 @@ jobs:
           path: LuaJIT
           if-no-files-found: warn
   Windows-MinGW:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@main
 
       - name: Setup MSYS2
-        uses: msys2/setup-msys2@v2
-        with:
-          msystem: MINGW64
-          cache: false
-          install: >-
-            base-devel
-            clang
-            git
+        run: sudo apt update && sudo apt install mingw-w64 -y
 
       - name: Compiling
         run: chmod +x project/luajit/scripts/MinGW-Building.sh && ./project/luajit/scripts/MinGW-Building.sh
